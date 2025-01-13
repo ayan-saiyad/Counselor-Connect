@@ -1,6 +1,6 @@
 // script.js
 
-// Sample counselor data
+// Sample counselor data in array
 const counselors = [
     {
         name: "Jane Doe",
