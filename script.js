@@ -98,3 +98,28 @@ function setupBookNowButtons() {
         });
     });
 }
+
+function setupModalActions() {
+    const bookingModal = document.getElementById("booking-modal");
+    const closeModal = document.getElementById("close-modal");
+    const confirmBookingBtn = document.getElementById("confirm-booking");
+
+    // Close button
+    closeModal.addEventListener("click", () => {
+        bookingModal.style.display = "none";
+    });
+
+    // Confirm booking (demo action)
+    confirmBookingBtn.addEventListener("click", () => {
+        alert("Your session is booked successfully!");
+        bookingModal.style.display = "none";
+    });
+
+    // Optionally, close modal when user clicks outside of the modal content
+    window.addEventListener("click", (e) => {
+        if (e.target === bookingModal) {
+            bookingModal.style.display = "none";
+        }
+    });
+}
+
