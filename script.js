@@ -71,3 +71,30 @@ function renderCounselors() {
         container.appendChild(card);
     });
 }
+
+
+function setupBookNowButtons() {
+    // Get all "Book Now" buttons
+    const bookNowButtons = document.querySelectorAll(".book-now-btn");
+    bookNowButtons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            const counselorIndex = e.target.getAttribute("data-index");
+            const selectedCounselor = counselors[counselorIndex];
+            
+           // Get the session duration from the select menu
+            const select = document.getElementById(`session-select-${counselorIndex}`);
+            const sessionValue = select.value;
+            const sessionPrice = select.options[select.selectedIndex].dataset.price;
+            
+            // Populate modal info
+            const modalCounselorInfo = document.getElementById("modal-counselor-info");
+            modalCounselorInfo.textContent = `
+                You are booking ${selectedCounselor.name} for a ${sessionValue} session at $${sessionPrice}.
+            `;
+            
+            // Show modal
+            const bookingModal = document.getElementById("booking-modal");
+            bookingModal.style.display = "flex";
+        });
+    });
+}
