@@ -123,3 +123,11 @@ function setupModalActions() {
     });
 }
 
+function init() {
+    renderCounselors();      // Creates the counselor cards
+    setupBookNowButtons();   // Sets up "Book Now" button events
+    setupModalActions();     // Sets up modal close & confirm actions
+}
+
+  // Listen for DOM content to load, then init
+document.addEventListener("DOMContentLoaded", init);
