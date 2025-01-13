@@ -35,3 +35,39 @@ const counselors = [
 ];
 
 
+// A function to create counselor cards
+function renderCounselors() {
+    const container = document.getElementById("counselors-container");
+
+    // Clear container first (if we want to re-render or update)
+    container.innerHTML = "";
+
+    counselors.forEach((counselor, index) => {
+      // Create a div for the card
+        const card = document.createElement("div");
+        card.classList.add("counselor-card");
+
+      // Card content
+        card.innerHTML = `
+            <h3>${counselor.name}</h3>
+            <p>Rating: ${counselor.rating}%</p>
+            <p>Experience: ${counselor.experience}</p>
+            <label for="session-select-${index}">Session:</label>
+            <select id="session-select-${index}">
+                ${counselor.sessions
+                    .map((session) => {
+                        return `
+                            <option value="${session.duration}" data-price="${session.price}">
+                            ${session.duration} - $${session.price}
+                            </option>
+                        `;
+                    })
+                .join("")}
+            </select>
+            <button data-index="${index}" class="book-now-btn">Book Now</button>
+        `;
+
+      // Append the card to the container
+        container.appendChild(card);
+    });
+}
