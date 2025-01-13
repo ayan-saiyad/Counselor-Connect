@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Counselor Connect Demo</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+    
+    <!-- Sidebar (Placeholder) -->
+    <aside class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="#">Compass</a></li>
+            <li><a href="#">SmartPath</a></li>
+            <li><a href="#">Pathway Planner</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#" class="active">Counselor Connect</a></li>
+            <li><a href="#">Recommended Resources</a></li>
+        </ul>
+    </aside>
+    
+    <!-- Main Content -->
+        <main class="main-content">
+            <h1>Counselor Connect</h1>
+            <p>Select from a range of counselors based on rating, experience, and session duration.</p>
+
+        <!-- Counselors List Container -->
+            <div id="counselors-container" class="counselors-container">
+        <!-- JavaScript will dynamically populate the counselor cards here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Booking Modal (hidden by default) -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close-btn">&times;</span>
+            <h2>Book Session</h2>
+            <p id="modal-counselor-info"></p>
+            <button id="confirm-booking" class="btn-primary">Confirm Booking</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
